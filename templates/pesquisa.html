@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setor de Pesquisa</title>
+    <link rel="stylesheet" href="/static/css/pesquisa_styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Projetos em Desenvolvimento</h1>
+        <ul class="project-list">
+            <li class="project-item">
+                <strong>Projeto 1</strong>
+                <div>
+                    <button class="images-btn" data-project="1">Imagens</button>
+                    <button class="reports-btn" data-project="1">Relatórios</button>
+                </div>
+            </li>
+            <li class="project-item">
+                <strong>Projeto 2</strong>
+                <div>
+                    <button class="images-btn" data-project="2">Imagens</button>
+                    <button class="reports-btn" data-project="2">Relatórios</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Modal para Relatórios -->
+    <div class="modal" id="reports-modal">
+        <div class="modal-content">
+            <h2>Relatórios</h2>
+            <div class="document-list">
+                <div class="document-item" data-document="1">Relatório 1</div>
+                <div class="document-item" data-document="2">Relatório 2</div>
+            </div>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal para Carrossel de Imagens -->
+    <div class="carousel-modal" id="images-modal">
+        <div class="carousel-container">
+            <button class="carousel-button" id="prev-image">‹</button>
+            <img src="/static/images/image1.jpg" alt="Imagem do projeto" class="carousel-image" id="carousel-image">
+            <button class="carousel-button" id="next-image">›</button>
+        </div>
+    </div>
+
+    <!-- Modal para Conteúdo do Relatório -->
+    <div class="modal" id="report-content-modal">
+        <div class="modal-content">
+            <h2>Conteúdo do Relatório</h2>
+            <p id="report-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/pesquisa.js') }}"></script>
+</body>
+</html>
+
+<a href="/logout">Sair</a>

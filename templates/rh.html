@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RH - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        /* Estilos adicionais para a página de RH */
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #111; /* Fundo preto */
+            color: #fff; /* Texto branco */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dashboard-container {
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05); /* Fundo levemente transparente */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input, select {
+            border: 1px solid #fff;
+            background-color: transparent;
+            color: #fff;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #bd8d2c;
+            box-shadow: 0 0 5px rgba(189, 141, 44, 0.5);
+        }
+
+        button {
+            border: none;
+            background-color: #bd8d2c;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #a67524;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        ul li span {
+            font-weight: bold;
+            color: #bd8d2c;
+        }
+
+        .logout {
+            display: inline-block;
+            margin-top: 20px;
+            color: #bd8d2c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .logout:hover {
+            color: #a67524;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Setor de RH</h1>
+        <h2>Adicionar Novo Usuário</h2>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="text" name="username" placeholder="Usuário" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            
+            <label for="sector">Setor:</label>
+            <select name="sector" id="sector" required>
+                <option value="rh">Recursos Humanos</option>
+                <option value="pesquisa">Pesquisa</option>
+            </select>
+            
+            <button type="submit">Adicionar Usuário</button>
+        </form>
+
+        <h2>Usuários Cadastrados</h2>
+        <ul>
+            {% for user in users %}
+            <li>
+                <span>{{ user.name }}</span> - Setor: {{ user.sector }}
+            </li>
+            {% endfor %}
+        </ul>
+
+        <a href="/logout" class="logout">Sair</a>
+    </div>
+</body>
+</html>

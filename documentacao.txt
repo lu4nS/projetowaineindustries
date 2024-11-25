@@ -1,0 +1,20 @@
+ESSE PROJETO USA HTML, CSS, JS, PYTHON, FLASK e SQLITE
+
+TENHA PYTHON  e PIP INSTALADO 
+Estando na pasta do projeto abra o terminal e execute
+python -m venv venv  para criar ambiente virtual
+venv\Scripts\activate (ativação do ambiente virtual)
+
+pip install flask
+pip install flask flask-sqlalchemy werkzeug
+
+Na primeira execução use isso para criar um usuário
+set FLASK_APP=app.py
+flask create-user
+Execute python app.py
+Visualize em http://127.0.0.1:5000
+
+Foram criados setores onde o setor de rh pode adicionar novos usuários 
+e definir seu setor para ter acesso a uma rota específica. 
+Exemplo ‘rh’ e ‘pesquisa’.
+

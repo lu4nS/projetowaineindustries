@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    text-align: center;
+}
+
+.wayne-logo {
+    max-width: 300px; /* Ajuste o tamanho máximo da largura */
+    height: auto; /* Mantém a proporção da altura */
+    display: block; /* Centraliza a imagem no contêiner */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+
+.login-form {
+    margin-top: 20px;
+}
+
+.login-input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+}
+
+.login-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #bd8d2c;
+    color: #fff;
+    cursor: pointer;
+}
